@@ -1,0 +1,206 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f06, #f79c42); /* Soft gradient background */
+    color: #333; /* Dark text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-image: url('https://example.com/your-background-image.jpg'); /* Add a background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 3.5em; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    text-align: center;
+    margin-top: 40px;
+    color: #ff6347; /* Soft orange-red color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: textWarp 3s ease-in-out infinite alternate;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.4em; /* Larger font size */
+    font-weight: 500; /* Medium weight for clarity */
+    color: #555; /* Slightly lighter text color */
+    margin: 20px 0;
+    text-align: justify; /* Justified text alignment */
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUp 2s ease-out forwards, explodeIn 1s ease-out forwards;
+    position: relative;
+    top: -15px; /* Slightly raised text */
+    border-left: 5px solid #ff6347; /* Red left border for text */
+    padding-left: 20px; /* Padding for text inside */
+    font-family: 'Georgia', serif; /* Serif font for a more formal look */
+}
+
+/* Image Styles */
+img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px; /* Rounded corners */
+    opacity: 0;
+    animation: rotateInZoom 2s ease-out forwards, floating 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Main container */
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 1100px;
+    background-color: white;
+    border: 5px solid #ff6347; /* Red border for the whole container */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Main Container */
+.div:hover {
+    transform: scale(1.03); /* Slight zoom-in effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Inner Divs */
+.divv, .ll, .pop, .nn, .lllll {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInUp 2s ease-out forwards, explodeIn 1s ease-out forwards;
+    transform: translateY(30px);
+}
+
+/* Animations */
+
+/* Exploding effect on text */
+@keyframes explodeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Text warp effect */
+@keyframes textWarp {
+    0% {
+        transform: scale(1) rotate(0deg);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.2) rotate(5deg);
+        text-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+}
+
+/* Fade-in and up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rotate and Zoom in effect for images */
+@keyframes rotateInZoom {
+    0% {
+        transform: rotate(90deg) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Floating animation for images */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+/* Slide in from left */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hover Effects */
+
+/* Hover: Glow effect */
+.divv:hover, .ll:hover, .pop:hover, .nn:hover, .lllll:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hover: 3D effect on images */
+img:hover {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .div {
+        padding: 20px;
+    }
+
+    .divv {
+        margin-bottom: 20px;
+    }
+
+    .ll, .pop, .nn, .lllll {
+        font-size: 1.1em;
+    }
+
+    .ll img, .pop img, .nn img, .lllll img {
+        max-width: 80%; /* Larger images on smaller screens */
+    }
+}
